@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>A JavaScript Clock</title>
+<script type="text/javascript">
+function initClock() {
+  var now = new Date();
+  var hr  = now.getHours();
+  var min = now.getMinutes();
+  var sec = now.getSeconds();
+  if (min < 10) min = "0" + min;  // insert a leading zero
+  if (sec < 10) sec = "0" + sec;
+  document.getElementById('clockDisplay').innerHTML
+     =  + hr + ":" + min + ":" + sec;
+  setTimeout('initClock()', 500);
+}
+</script>
+</head>
+<body onLoad="initClock()">
+<h3 id="clockDisplay"></h3>
+</body>
+</html>
